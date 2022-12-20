@@ -21,8 +21,8 @@ const removeCartItem = (cartItems, cartItemToRemove) => {
     (cartItem) => cartItem.id === cartItemToRemove.id
   );
 
-  if (existingCartItem.quantity == 1) {
-    return cartItems.filter((cartItem) => cartItem.id != cartItemToRemove.id);
+  if (existingCartItem.quantity === 1) {
+    return cartItems.filter((cartItem) => cartItem.id !== cartItemToRemove.id);
   }
 
   return cartItems.map((cartItem) =>
@@ -33,7 +33,7 @@ const removeCartItem = (cartItems, cartItemToRemove) => {
 };
 
 const clearCartItem = (cartItems, cartItemToClear) =>
-  cartItems.filter((cartItem) => cartItem.id != cartItemToClear.id);
+  cartItems.filter((cartItem) => cartItem.id !== cartItemToClear.id);
 
 export const CartContext = createContext({
   isCartOpen: false,
